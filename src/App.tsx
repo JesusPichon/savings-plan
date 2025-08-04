@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import './App.css'
 
-function Table({ data }) {
+function Table({ data = {goal: "", "limit-date": "", cost:""} }) {
   const monthNames = [
     "January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December"
@@ -10,19 +10,18 @@ function Table({ data }) {
   const [months, setMonths] = useState(0);
   const [startMonth, setStartMonth] = useState(new Date().getMonth());
 
-  const monthsDifference = () => {
-    const today = new Date();
-    const target = new Date(data["limit-date"]);
-
-    const yearDiff = target.getFullYear() - today.getFullYear();
-    const monthDiff = target.getMonth() - today.getMonth();
-    const totalMonths = yearDiff * 12 + monthDiff + 1; // +1 para incluir el mes actual
-
-    setStartMonth(today.getMonth());
-    setMonths(totalMonths);
-  };
-
   useEffect(() => {
+    const monthsDifference = () => {
+      const today = new Date();
+      const target = new Date(data["limit-date"]);
+
+      const yearDiff = target.getFullYear() - today.getFullYear();
+      const monthDiff = target.getMonth() - today.getMonth();
+      const totalMonths = yearDiff * 12 + monthDiff + 1; // +1 para incluir el mes actual
+
+      setStartMonth(today.getMonth());
+      setMonths(totalMonths);
+    };
     monthsDifference();
   }, [data]); // Solo recalcular si los datos cambian
 
