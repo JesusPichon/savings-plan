@@ -1,0 +1,84 @@
+
+.box {
+  margin: 1em auto;
+  padding: 1em;
+  width: 30vw;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  text-align: center;
+}
+
+.box-input {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: 20px 0;
+}
+
+.box-input input {
+  outline: none;
+}
+
+.box-input:focus-within {
+  color: yellow;
+}
+
+.box label {
+  text-align: left;
+  font-weight: bolder;
+  font-size: large;
+}
+
+.box input {
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  background-color: var(--black);
+  border: none;
+  border-bottom: 2px solid var(--white);
+  color: var(--white);
+  font-size: medium;
+}
+
+.box input[type="button"] {
+  margin: 0 auto;
+  width: 50%;
+  background-color: var(--black);
+  color: var(--white);
+  border-radius: 10px;
+  border: 1px solid var(--white);
+  font-weight: bolder;
+  font-size: medium;
+  padding: 1rem;
+  transition: all 0.5s ease-out;
+}
+
+.box input[type="button"]:hover {
+  transform: scale(1.1);
+  color: yellow;
+  border-color: yellow;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+table tr:hover {
+  color: yellow;
+}
+
+table th {
+  border-bottom: 1px solid var(--white);
+  text-align: center;
+  padding: 1rem;
+  font-weight: bolder;
+}
+
+table td {
+  border-bottom: 1px solid var(--white);
+  color: var(--white);
+  text-align: center;
+  padding: 1rem;
+}
